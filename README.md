@@ -58,23 +58,42 @@ Input Image
 Image Validation
      ↓
 Preprocessing
-     ↓
-Grayscale + Gaussian Blur
+     ├── Resize
+     ├── Grayscale
+     └── Gaussian Blur
      ↓
 Canny Edge Detection
      ↓
+[Separate Edge Representation]
+     
+Preprocessed Image
+     ↓
 Document Detection
+     ├── Grayscale
+     ├── Gaussian Smoothing
+     ├── Otsu Thresholding
+     ├── Morphological Closing
+     ├── Contour Extraction
+     ├── Polygon Approximation
+     └── Convexity Checking
      ↓
 Four-Corner Detection
      ↓
 Homography / Perspective Correction
      ↓
 Document Enhancement
+     ├── CLAHE
+     └── Sharpening
      ↓
 Quality Analysis
+     ├── Sharpness
+     ├── Brightness
+     ├── Contrast
+     └── Quality Score + Classification
+     ↓
+Output Validation
      ↓
 Output Images + Quality Report
-```
 
 ## Project Structure
 
